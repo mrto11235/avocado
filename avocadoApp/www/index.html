@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <title>avocado</title>
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <!--link href="lib/ionic/css/ionic.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet"-->
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
   <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     -->
@@ -15,25 +15,25 @@
   <!-- ionic/angularjs js -->
   <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+
   <!-- cordova script (this will be a 404 during development) -->
   <script src="cordova.js"></script>
 
   <!-- your app's js -->
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
-  <script src="js/services.js"></script>
 </head>
 
-<body>
+<body ng-app="starter" ng-controller="a-controller">
   <table class="buttons-table">
     <tr>
       <td>
-        <button class="button button-block button-calm button-large padding" type="button">Lahko</button>
+        <button ng-click="subCount(2)" class="button button-block button-calm button-large padding" type="button">Lahko</button>
       </td>
     </tr>
     <tr>
       <td>
-        <button class="button button-block button-energized button-large padding" type="button">Srednje</button>
+        <button ng-click="gameStart()" class="button button-block button-energized button-large padding" type="button">Srednje</button>
       </td>
     </tr>
     <tr>
@@ -42,9 +42,18 @@
       </td>
     </tr>
   </table>
-  <div class="bar bar-footer bar-balanced">
-    <p class="p-centered padding">avocado</p>
-  </div>
+  <span>
+    count = <span ng-bind="count"></span>
+  </span>
+  {{labela}}
+  <div class="container">
+
+    <div ui-view></div>
+
+</div>
+  <ion-footer-bar class="bar-balanced">
+    <h1 class="title" />avocado</h1>
+  </ion-footer-bar>
 </body>
 
 </html>
