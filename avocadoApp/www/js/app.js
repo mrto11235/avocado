@@ -1,20 +1,19 @@
-var app = angular.module('starter', ['ionic', 'ui.router']);
-app.config(function($stateProvider, $urlRouterProvider) {
+var app = angular.module('starter', ['ionic'])
+.run(function($ionicPlatform) {
+        $ionicPlatform.ready(function() {
 
-  $urlRouterProvider.otherwise('/home');
-
-  $stateProvider
-
-  // HOME STATES AND NESTED VIEWS ========================================
-    .state('home', {
-    url: '/home',
-    templateUrl: 'templates/home.html'
-  })
-
-  // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-  .state('playground', {
-    url: '/playground',
-    templateUrl: 'templates/playground.html'
-  });
-
-});
+        });
+    })
+.config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('playground', {
+                url: '/playground',
+                templateUrl: 'templates/playground.html',
+                controller: 'a-controller'
+            })
+            .state('home', {
+                url: "/home",
+                templateUrl: "templates/home.html",
+                controller: "a-controller"
+            });
+    });

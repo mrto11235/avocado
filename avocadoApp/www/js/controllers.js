@@ -6,12 +6,8 @@ app.controller('a-controller', function($scope, $timeout, $location, $interval) 
   }
   $scope.gameStart = function() {
     $scope.labela = $location;
-    $location.path('/playground');
     $scope.count = 30;
     $scope.start();
-    $timeout(function() {
-      $location.path('/home');
-    }, 30000);
   }
   /*$interval(function() {
     $scope.count--;
@@ -19,7 +15,7 @@ app.controller('a-controller', function($scope, $timeout, $location, $interval) 
   $scope.start = function() {
     // stops any running interval to avoid two intervals running at the same time
     $scope.stop();
-
+    $location.path('/playground');
     // store the interval promise
     promise = $interval(substractCount, 1000);
   };
